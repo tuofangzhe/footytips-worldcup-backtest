@@ -1,0 +1,28 @@
+{
+  "name": "footytips-worldcup-backtest",
+  "version": "1.0.0",
+  "description": "Reproducible backtest of the Elo + Poisson model behind footytips.io — all 22 World Cups (1930–2022), 964 matches.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "fetch": "node scripts/fetch-data.mjs",
+    "backtest": "node scripts/fetch-data.mjs && node src/backtest.mjs",
+    "chart": "node tools/make-chart.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuofangzhe/footytips-worldcup-backtest.git"
+  },
+  "keywords": [
+    "football",
+    "soccer",
+    "world-cup",
+    "elo-rating",
+    "poisson",
+    "dixon-coles",
+    "sports-analytics",
+    "prediction-model",
+    "backtesting"
+  ]
+}
