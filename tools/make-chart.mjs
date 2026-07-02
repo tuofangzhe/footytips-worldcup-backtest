@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const { backtest: b } = JSON.parse(readFileSync(resolve(__dirname, '../results/backtest.json'), 'utf8'));
 
-const W = 900, H = 380, PAD = { l: 48, r: 16, t: 44, b: 42 };
+const W = 900, H = 380, PAD = { l: 48, r: 175, t: 44, b: 42 }; // 右侧留出基线标签区,避免压在柱子上
 const years = b.editions;
 const bw = (W - PAD.l - PAD.r) / years.length;
 const y = (v) => PAD.t + (100 - v) / 100 * (H - PAD.t - PAD.b);
@@ -25,8 +25,8 @@ const grid = [33.3, 45, 56.6].map((v, i) => {
   const labels = ['random 33.3%', 'always-favourite ~45%', `overall ${b.hitRate}%`];
   const dash = i === 2 ? '' : 'stroke-dasharray="4 4"';
   const color = i === 2 ? '#c0392b' : '#999';
-  return `<line x1="${PAD.l}" x2="${W - PAD.r}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" stroke="${color}" ${dash} stroke-width="1"/>
-  <text x="${W - PAD.r}" y="${(y(v) - 4).toFixed(1)}" font-size="11" text-anchor="end" fill="${color}">${labels[i]}</text>`;
+  return `<line x1="${PAD.l}" x2="${W - PAD.r + 4}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" stroke="${color}" ${dash} stroke-width="1"/>
+  <text x="${W - PAD.r + 8}" y="${(y(v) + 4).toFixed(1)}" font-size="11" text-anchor="start" fill="${color}">${labels[i]}</text>`;
 }).join('');
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="system-ui,sans-serif">
