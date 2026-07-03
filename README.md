@@ -1,7 +1,7 @@
 # World Cup Prediction Backtest — 22 Tournaments, 964 Matches
 
 A fully reproducible backtest of the Elo + Poisson prediction model behind
-**[FootyTips.io](https://footytips.io/)**, covering every FIFA World Cup from
+**[FootyTips.io](https://footytips.io/?ref=github)**, covering every FIFA World Cup from
 1930 to 2022: **56.6% win/draw/loss hit rate, Brier score 0.570**, with no
 future information used in any prediction.
 
@@ -78,7 +78,7 @@ Machine-readable results: [`results/backtest.json`](results/backtest.json).
 The same engine runs FootyTips.io's World Cup 2026 predictions, with every
 pick settled publicly after full time — including the misses:
 
-**https://footytips.io/track-record/**
+**https://footytips.io/track-record/?ref=github**
 
 ## References
 
