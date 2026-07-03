@@ -80,6 +80,26 @@ pick settled publicly after full time — including the misses:
 
 **https://footytips.io/track-record/**
 
+## References
+
+The model is an original, dependency-free implementation of standard published
+methods — none of the underlying math is ours, and that's the point:
+
+- A. E. Elo, *The Rating of Chessplayers, Past and Present* (1978) — the rating
+  framework, adapted to football via the
+  [World Football Elo Ratings](https://www.eloratings.net/about) conventions
+  (importance-scaled K, goal-difference multiplier, +100 home advantage)
+  introduced by Bob Runyan (1997).
+- M. J. Maher, *Modelling Association Football Scores*, Statistica Neerlandica
+  36 (1982) — independent Poisson goal models.
+- M. J. Dixon & S. G. Coles, *Modelling Association Football Scores and
+  Inefficiencies in the Football Betting Market*, Applied Statistics 46.2
+  (1997) — the low-score dependency correction (`dcTau`, rho).
+
+What is ours: the from-scratch implementation, the parameter calibration
+(Brier-optimal on the modern era), the 964-match walk-forward backtest, and
+the public settlement ledger.
+
 ## Data & Credits
 
 - Match results: [martj42/international_results](https://github.com/martj42/international_results)
